@@ -1,3 +1,5 @@
+out_ae.npy
+out_ae_2
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

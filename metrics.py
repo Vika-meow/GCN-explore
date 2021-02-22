@@ -80,3 +80,11 @@ def get_hits(vec, test_pair, top_k=(1, 10, 50, 100)):
 def get_combine_hits(se_vec, ae_vec, beta, test_pair, top_k=(1, 10, 50, 100)):
     vec = np.concatenate([se_vec*beta, ae_vec*(1.0-beta)], axis=1)
     get_hits(vec, test_pair, top_k)
+
+
+def know_all_sim(vec, test_pair):
+    Lvec = np.array([vec[e1] for e1, e2 in test_pair])
+    Rvec = np.array([vec[e2] for e1, e2 in test_pair])
+    sim = scipy.spatial.distance.cdist(Lvec, Rvec, metric='cityblock')
+    print(sim[2, :].argsort())
+    #rank_index = np.where(rank == 2)[0][0]
