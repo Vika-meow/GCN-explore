@@ -32,22 +32,22 @@ def tsne_plot_2d(label, embeddings, words=[], a=1):
 def visualize():
     vectors = np.load("out_ae.npy")
     print('loaded vectors...')
-    dic_1 = loadIds("data/ru_en/ent_ids_1")
-    dic_2 = loadIds("data/ru_en/ent_ids_2")
-    dic_1.update(dic_2)
-    dic_ids = dic_1
+    #dic_1 = loadIds("data/ru_en/ent_ids_1")
+    #dic_2 = loadIds("data/ru_en/ent_ids_2")
+    #dic_1.update(dic_2)
+    #dic_ids = dic_1
     words = []
     embeddings = []
     i = 0
     for vec in vectors:
         embeddings.append(vec)
-        words.append(dic_ids[i])
+        words.append(i)
         i += 1
     tsne_ak_2d = TSNE(n_components=2, init='pca', n_iter=3500, random_state=32)
     print('set settings for TSNE')
     embeddings_ak_2d = tsne_ak_2d.fit_transform(embeddings)
     print('get new embeddings in 2dims')
-    tsne_plot_2d('ru_en_knowledge_graph_entities_embeddings', embeddings_ak_2d, words, a=0.1)
+    tsne_plot_2d('ru_en_knowledge_graph_entities_embeddings_ids', embeddings_ak_2d, words, a=0.1)
 
 def main():
     visualize()
