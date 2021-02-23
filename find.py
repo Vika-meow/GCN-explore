@@ -50,4 +50,4 @@ while(1):
 	rank = sim[a, :].argsort()
 	rank = rank[:10]
 	for el in rank:
-		print(dic_2[el] + "\t")
+		print(dic_ids[13500 + el] + "\t")
