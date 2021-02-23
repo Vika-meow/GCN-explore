@@ -41,7 +41,7 @@ dic_1 = loadIds("data/ru_en/ent_ids_1")
 dic_2 = loadIds("data/ru_en/ent_ids_2")
 dic_1.update(dic_2)
 dic_ids = dic_1
-print("ids loaded");
+print("ids loaded")
 
 while(1):
 	print("print entity id")
@@ -50,4 +50,4 @@ while(1):
 	rank = sim[a, :].argsort()
 	rank = rank[:10]
 	for el in rank:
-		print(dic_ids[el] + "\t")
+		print(dic_2[el] + "\t")
