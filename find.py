@@ -77,10 +77,11 @@ def findCloseFromAll(num=10):
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
-flags.DEFINE_string('graph', 'one', 'Graphs for find nearest entities') #one - in another lang graph; two - from two graphs
+flags.DEFINE_string('lang', 'one', 'Graphs for find nearest entities') #one - in another lang graph; two - from two graphs
 
 if __name__ == "__main__":
-    if(FLAGS.graph == 'one'):
+    print("lang is" + FLAGS.lang)
+    if FLAGS.lang == 'one':
         findCloseFromDifferentLang()
     else:
         findCloseFromAll()
