@@ -75,6 +75,12 @@ def findCloseFromAll(num=10):
             print(dic_ids[el] + "\t")
 
 
+flags = tf.app.flags
+FLAGS = flags.FLAGS
+flags.DEFINE_string('graph', 'one', 'Graphs for find nearest entities') #one - in another lang graph; two - from two graphs
 
 if __name__ == "__main__":
-    findCloseFromAll()
+    if(FLAGS.graph == "one"):
+        findCloseFromDifferentLang()
+    else:
+        findCloseFromAll()
