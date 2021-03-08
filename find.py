@@ -80,7 +80,7 @@ FLAGS = flags.FLAGS
 flags.DEFINE_string('graph', 'one', 'Graphs for find nearest entities') #one - in another lang graph; two - from two graphs
 
 if __name__ == "__main__":
-    if(FLAGS.graph == "one"):
+    if(FLAGS.graph == 'one'):
         findCloseFromDifferentLang()
     else:
         findCloseFromAll()
